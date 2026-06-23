@@ -13,7 +13,14 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "paths": {}
+    "esModuleInterop": true,
+    "paths": {
+      "@school-hub/parent": ["./libs/module/parent/src/index.ts"],
+      "@school-hub/student": ["./libs/module/student/src/index.ts"],
+      "@school-hub/teacher": ["./libs/module/teacher/src/index.ts"],
+      "@school-hub/school-admin": ["./libs/module/school-admin/src/index.ts"],
+      "@school-hub/super-admin": ["./libs/module/super-admin/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
