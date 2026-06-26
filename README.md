@@ -1,101 +1,94 @@
-# SchoolHub
+# School Management System (SchoolHub)
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Nx](https://img.shields.io/badge/Nx-143055?style=for-the-badge&logo=nx&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+SchoolHub is a comprehensive and scalable **School Management System** built to streamline administrative tasks, enhance communication, and provide dedicated portals for all key stakeholders in an educational institution.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+This project is structured as an **Nx Monorepo** powered by **Angular**, ensuring high performance, modularity, and a seamless developer experience.
 
-## Run tasks
+## ✨ Features
 
-To run the dev server for your app, use:
+The application is divided into dedicated functional modules to serve different user roles effectively:
 
-```sh
-npx nx serve admin
+- **👨‍🎓 Student Portal**: Allows students to view their timetables, track attendance, check grades/results, and access learning materials.
+- **👨‍🏫 Teacher Portal**: Empowers teachers to manage classes, record attendance, grade assignments, and communicate with students and parents.
+- **👪 Parent Portal**: Provides parents with real-time updates on their child's academic progress, attendance records, and school announcements.
+- **🏫 School Admin Dashboard**: Enables school administrators to manage daily operations, staff, student enrollments, and school-specific configurations.
+- **🛡️ Super Admin Dashboard**: The central control system for managing multiple schools, global settings, subscription plans, and platform-wide analytics.
+
+## 🛠️ Technology Stack
+
+- **Frontend Framework**: [Angular](https://angular.dev/) (v19+)
+- **Workspace/Monorepo Management**: [Nx](https://nx.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: Custom reusable UI elements (`libs/shared/ui-elements`)
+- **Routing & State**: Angular Router, RxJS
+- **Linting & Formatting**: ESLint, Prettier, Husky & Commitlint
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- `npm`, `yarn`, or `pnpm` (Project is configured using `pnpm`)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/waheedianho/school-management-system.git
+   cd school-hub
+   ```
+
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+### Development Server
+
+Run the application locally using Nx. By default, you can serve the main application:
+
+```bash
+npx nx serve <app-name>
 ```
 
-To create a production bundle:
+Navigate to `http://localhost:4200/` to view it in your browser. The app will automatically reload if you change any of the source files.
 
-```sh
-npx nx build admin
+## 🏗️ Project Structure
+
+This workspace follows a modular architecture using Nx libraries:
+
+```text
+school-hub/
+├── apps/                 # Application entry points
+├── libs/
+│   ├── module/
+│   │   ├── parent/       # Parent portal features
+│   │   ├── school-admin/ # School Admin features
+│   │   ├── student/      # Student portal features
+│   │   ├── super-admin/  # Super Admin features
+│   │   └── teacher/      # Teacher portal features
+│   └── shared/           # Shared UI components, utilities, and services
+└── package.json
 ```
 
-To see all available targets to run for a project, run:
+## 📜 Commands (Nx Workspace)
 
-```sh
-npx nx show project admin
-```
+- **Build an app:** `npx nx build <app-name>`
+- **Run Unit Tests:** `npx nx test <project-name>`
+- **Run Linting:** `npx nx lint <project-name>`
+- **Format Code:** `npm run format`
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## 🤝 Contributing
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues page](https://github.com/waheedianho/school-management-system/issues).
 
-## Add new projects
+## 📝 License
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/angular:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/angular:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+This project is licensed under the [MIT License](LICENSE).
