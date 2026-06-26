@@ -1,2 +1,2 @@
-export * from './lib/school-admin/school-admin';
-export * from './lib/school-admin/school-admin.routes';
+export * from './school-admin';
+export * from './school-admin.routes';

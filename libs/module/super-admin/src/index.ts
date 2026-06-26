@@ -1,2 +1,2 @@
-export * from './lib/super-admin/super-admin';
-export * from './lib/super-admin/super-admin.routes';
+export * from './super-admin';
+export * from './super-admin.routes';

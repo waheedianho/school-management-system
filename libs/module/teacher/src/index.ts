@@ -1,2 +1,2 @@
-export * from './lib/teacher/teacher';
-export * from './lib/teacher/teacher.routes';
+export * from './teacher';
+export * from './teacher.routes';

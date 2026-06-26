@@ -1,2 +1,2 @@
-export * from './lib/parent/parent';
-export * from './lib/parent/parent.routes';
+export * from './parent';
+export * from './parent.routes';
